@@ -1,14 +1,31 @@
 module Task.Extra exposing
-    ( map10
+    ( map6
+    , map7
+    , map8
+    , map9
+    , map10
     , map11
     , map12
     , map13
     , map14
-    , map6
-    , map7
-    , map8
-    , map9
     )
+
+{-|
+
+
+# Task.Extra
+
+@docs map6
+@docs map7
+@docs map8
+@docs map9
+@docs map10
+@docs map11
+@docs map12
+@docs map13
+@docs map14
+
+-}
 
 import Task exposing (..)
 
