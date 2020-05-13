@@ -8,12 +8,15 @@ module Task.Extra exposing
     , map12
     , map13
     , map14
+    , andMap
     )
 
 {-|
 
 
 # Task.Extra
+
+Functions provided by this module execute Tasks in sequence one after another.
 
 @docs map6
 @docs map7
@@ -24,6 +27,7 @@ module Task.Extra exposing
 @docs map12
 @docs map13
 @docs map14
+@docs andMap
 
 -}
 
@@ -556,3 +560,22 @@ map14 func taskA taskB taskC taskD taskE taskF taskG taskH taskI taskJ taskK tas
                                     )
                         )
             )
+
+
+{-| Combine any number of tasks.
+
+    type alias User =
+        { name : String
+        , age : Int
+        , bio : String
+        }
+
+    Task.succeed User
+        |> andMap (Task.succeed "Jane Doe")
+        |> andMap (Task.succeed 34)
+        |> andMap (Task.succeed "Lorem Ipsum")
+
+-}
+andMap : Task x a -> Task x (a -> b) -> Task x b
+andMap =
+    map2 (|>)
