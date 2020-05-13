@@ -3,7 +3,7 @@
     "name": "alex-tan/task-extra",
     "summary": "Expand usages of Task",
     "license": "MIT",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "exposed-modules": [
         "Task.Extra"
     ],
